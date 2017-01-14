@@ -1,2 +1,2 @@
 # django-employee-app
-Employee application written with Django.
+Employee application written in Pyhon (Django).
