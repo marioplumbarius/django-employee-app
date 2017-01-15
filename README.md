@@ -15,10 +15,6 @@ Employee Management application written in Pyhon (Django).
 
 ---
 
-**Components:**
-- admin panel to manage employees' data
-- API to list, add and remove employees
-
 **Pre-requisites:**
 - python3 (v3.5)
 - python-pip3 (v9.0.1)
@@ -51,16 +47,17 @@ python3 manage.py createsuperuser
 coverage run --source='.' employeemanager/manage.py test staff
 ```
 
-# Coverage report
+## Code coverage report
 *Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
 ```shell
 coverage html
 ```
 
-## Start app (development mode)
+## Start app
 ```shell
 python3 manage.py runserver localhost:8000
 ```
+
 ---
 
 ## API usage

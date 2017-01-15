@@ -13,7 +13,6 @@ Employee Management application written in Pyhon (Django).
 [![Issue Count](https://codeclimate.com/github/marioluan/django-employee-app/badges/issue_count.svg)](https://codeclimate.com/github/marioluan/django-employee-app)
 [![Dependency Status](https://gemnasium.com/badges/github.com/marioluan/django-employee-app.svg)](https://gemnasium.com/github.com/marioluan/django-employee-app)
 
-
 ---
 
 **Pre-requisites:**
@@ -63,7 +62,7 @@ docker run \
     coverage run --source='.' employeemanager/manage.py test staff
 ```
 
-## Code coverage
+## Code coverage report
 *Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
 ```shell
 docker run \
