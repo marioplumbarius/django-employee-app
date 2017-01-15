@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export HOST_DIR=$(pwd)
+export DOCKER_IMAGE=employeemanager:latest
+
+

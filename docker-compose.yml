@@ -1,0 +1,9 @@
+version: '2'
+services:
+    web:
+        build: .
+        command: python3 employeemanager/manage.py runserver 0.0.0.0:8000
+        volumes:
+        - .:/opt/app
+        ports:
+        - "8000:8000"
