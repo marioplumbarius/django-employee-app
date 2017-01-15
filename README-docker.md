@@ -55,9 +55,7 @@ docker-compose up
 ---
 
 ## API usage
-To interact with the API, log in at http://localhost:8000/staff/api-auth/  
-with the superuser created before. After log in, you might be redirected   
-to an interactive interface.
+To interact with the API, log in at [http://localhost:8000/staff/api-auth/](http://localhost:8000/staff/api-auth/) with the superuser created before. After log in, you might be redirected to an interactive interface.
 
 ## Admin
-Head over http://localhost:8000/staff/admin/ to access the admin.
+Head over [http://localhost:8000/staff/admin/](http://localhost:8000/staff/admin/) to access the admin.
