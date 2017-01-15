@@ -60,7 +60,18 @@ docker run \
     --name employeemanager_test \
     -v $HOST_DIR:/opt/app \
     $DOCKER_IMAGE \
-    python3 employeemanager/manage.py test staff
+    coverage run --source='.' employeemanager/manage.py test staff
+```
+
+## Code coverage
+*Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
+```shell
+docker run \
+    --rm \
+    --name employeemanager_test \
+    -v $HOST_DIR:/opt/app \
+    $DOCKER_IMAGE \
+    coverage html
 ```
 
 ## Start app

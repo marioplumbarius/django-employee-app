@@ -15,6 +15,9 @@ RUN apk add --update \
 COPY requirements.txt $APP_DIR
 RUN pip3 install -r requirements.txt
 
+COPY requirements-test.txt $APP_DIR
+RUN pip3 install -r requirements-test.txt
+
 COPY employeemanager $APP_DIR
 
 EXPOSE 8000

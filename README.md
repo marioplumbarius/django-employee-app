@@ -26,6 +26,7 @@ Employee Management application written in Pyhon (Django).
 ## Install dependencies
 ```shell
 pip3 install -r requirements.txt
+pip3 install -r requirements-test.txt
 ```
 
 ## Go to employeemanager directory
@@ -47,7 +48,13 @@ python3 manage.py createsuperuser
 
 ## Test
 ```shell
-python manage.py test staff
+coverage run --source='.' employeemanager/manage.py test staff
+```
+
+# Coverage report
+*Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
+```shell
+coverage html
 ```
 
 ## Start app (development mode)
