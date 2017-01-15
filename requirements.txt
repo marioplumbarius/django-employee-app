@@ -3,6 +3,7 @@ Django==1.10.5
 django-crispy-forms==1.6.1
 django-filter==1.0.1
 djangorestframework==3.5.3
+django-log-request-id==1.3.2
 itypes==1.1.0
 Markdown==2.6.7
 requests==2.12.4
