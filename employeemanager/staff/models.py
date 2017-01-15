@@ -1,8 +1,8 @@
 from django.db import models
 
-class BaseModel(models.Model):
+class AbstractBaseModel(models.Model):
     """
-        BaseModel contains common fields between models.
+        AbstractBaseModel contains common fields between models.
 
         All models should extend this class.
     """
@@ -13,7 +13,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-class Department(BaseModel):
+class Department(AbstractBaseModel):
     """
         Department represents the sector a set of employees belongs to.
     """
@@ -23,7 +23,7 @@ class Department(BaseModel):
     def __str__(self):
         return self.name
 
-class Employee(BaseModel):
+class Employee(AbstractBaseModel):
     """
         Employee represents the people from a given department.
     """
