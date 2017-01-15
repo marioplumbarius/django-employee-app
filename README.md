@@ -7,6 +7,12 @@ Employee Management application written in Pyhon (Django).
 
 ***Note: to run the app using Docker, head over [README-docker.md](README-docker.md)***
 
+[![Build Status](https://travis-ci.org/marioluan/django-employee-app.svg?branch=master)](https://travis-ci.org/marioluan/django-employee-app)
+[![Code Climate](https://codeclimate.com/github/marioluan/django-employee-app/badges/gpa.svg)](https://codeclimate.com/github/marioluan/django-employee-app)
+[![Test Coverage](https://codeclimate.com/github/marioluan/django-employee-app/badges/coverage.svg)](https://codeclimate.com/github/marioluan/django-employee-app/coverage)
+[![Issue Count](https://codeclimate.com/github/marioluan/django-employee-app/badges/issue_count.svg)](https://codeclimate.com/github/marioluan/django-employee-app)
+[![Dependency Status](https://gemnasium.com/badges/github.com/marioluan/django-employee-app.svg)](https://gemnasium.com/github.com/marioluan/django-employee-app)
+
 ---
 
 **Components:**
