@@ -5,7 +5,7 @@ Employee Management application written in Pyhon (Django).
 - admin panel to manage employees' data
 - API to list, add and remove employees
 
-***Note: to run the app using Docker, head over README-docker.md***
+***Note: to run the app using Docker, head over [README-docker.md](README-docker.md)***
 
 ---
 
