@@ -13,9 +13,20 @@ Employee Management application written in Pyhon (Django).
 - docker (v1.12.6)
 - docker-compose (v1.10)
 
-## Run migrations
+## Load environment variables
+**IMPORTANT:** this must be done before any subsequent step.
 ```shell
 source .dockerenv
+```
+
+## Build the Docker image
+```shell
+docker build -t $DOCKER_IMAGE .
+```
+
+## Run migrations
+```shell
+touch employeemanager/db.sqlite3
 docker run \
     --rm \
     --name employeemanager_migrations \
@@ -26,7 +37,6 @@ docker run \
 
 ## Create superuser with privileged access
 ```shell
-source .dockerenv
 docker run \
     --rm \
     -ti \
@@ -38,13 +48,12 @@ docker run \
 
 ## Test
 ```shell
-source .dockerenv
 docker run \
     --rm \
     --name employeemanager_test \
     -v $HOST_DIR:/opt/app \
     $DOCKER_IMAGE \
-    python3 employeemanager/manage.py test
+    python3 employeemanager/manage.py test staff
 ```
 
 ## Start app
