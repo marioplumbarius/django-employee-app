@@ -63,7 +63,7 @@ docker run \
 ```
 
 ## Code coverage report
-*Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
+*Note: Run this command only after running the test suite with the command above.*
 ```shell
 docker run \
     --rm \
@@ -71,6 +71,7 @@ docker run \
     -v $HOST_DIR:/opt/app \
     $DOCKER_IMAGE \
     coverage html
+# the report will be located at `htmlcov/index.html`
 ```
 
 ## Start app

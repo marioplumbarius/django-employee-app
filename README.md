@@ -48,9 +48,10 @@ coverage run --source='.' employeemanager/manage.py test staff
 ```
 
 ## Code coverage report
-*Note: Generates a report at `htmlcov/index.html` only after running the test suite with the command above.*
+*Note: Run this command only after running the test suite with the command above.*
 ```shell
 coverage html
+# the report will be located at `htmlcov/index.html`
 ```
 
 ## Start app
