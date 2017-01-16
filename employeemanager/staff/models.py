@@ -29,7 +29,7 @@ class Employee(AbstractBaseModel):
     """
 
     name = models.CharField(max_length=250, db_index=True)
-    email = models.EmailField(db_index=True, unique=True)
+    email = models.EmailField(unique=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     def __str__(self):
