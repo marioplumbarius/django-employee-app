@@ -59,7 +59,7 @@ docker run \
     --name employeemanager_test \
     -v $HOST_DIR:/opt/app \
     $DOCKER_IMAGE \
-    coverage run --source='.' employeemanager/manage.py test staff
+    coverage run --source='.' employeemanager/manage.py test staff.tests
 ```
 
 ## Code coverage report

@@ -44,7 +44,7 @@ python3 manage.py createsuperuser
 
 ## Test
 ```shell
-coverage run --source='.' employeemanager/manage.py test staff
+coverage run --source='.' employeemanager/manage.py test staff.tests
 ```
 
 ## Code coverage report
