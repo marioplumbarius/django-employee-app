@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 
 from staff.tests.factories.user import UserFactory
 
+
 class ViewsHelpers():
 
     @staticmethod
@@ -36,4 +37,3 @@ class ViewsHelpers():
             )
 
         return user
-

@@ -1,17 +1,16 @@
 from django.urls import reverse
 from django.test import TestCase
-from rest_framework.test import APIRequestFactory
-from rest_framework.test import force_authenticate
-from rest_framework import status
 from factory.fuzzy import FuzzyInteger
-
+from rest_framework.test import APIRequestFactory, force_authenticate
+from rest_framework import status
 
 from staff.models import Employee
 from staff.serializers import EmployeeSerializer
 from staff.tests.factories.employee import EmployeeFactory, DepartmentFactory
 from staff.tests.factories.user import UserFactory
-from staff.views import EmployeeViewSet
 from staff.tests.support.helpers.views import ViewsHelpers
+from staff.views import EmployeeViewSet
+
 
 class EmployeeViewSetSpec(TestCase):
 
@@ -29,7 +28,11 @@ class EmployeeViewSetSpec(TestCase):
         department = DepartmentFactory.create()
         employee = EmployeeFactory.build()
         department_url = reverse('department-detail', args=[department.id])
-        data = {'name': employee.name, 'email': employee.email, 'department': department_url}
+        data = {
+            'name': employee.name,
+            'email': employee.email,
+            'department': department_url
+        }
 
         view = EmployeeViewSet.as_view({'post': 'create'})
         url = reverse('employee-list')
@@ -53,7 +56,11 @@ class EmployeeViewSetSpec(TestCase):
         response.render()
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.data.get('name'), ['Ensure this field has no more than 250 characters.'])
+
+        self.assertEqual(
+            response.data.get('name'),
+            ['Ensure this field has no more than 250 characters.']
+        )
 
     def test_create_employee_with_duplicated_email(self):
         employee_a = EmployeeFactory.create()
@@ -69,7 +76,11 @@ class EmployeeViewSetSpec(TestCase):
         response.render()
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.data.get('email'), ['employee with this email already exists.'])
+
+        self.assertEqual(
+            response.data.get('email'),
+            ['employee with this email already exists.']
+        )
 
     def test_read_employee_fetch_all(self):
         # TODO: assert pagination
@@ -153,8 +164,15 @@ class EmployeeViewSetSpec(TestCase):
     def test_patch_employee_when_found(self):
         employee_a = EmployeeFactory.create()
         employee_b = EmployeeFactory.build()
-        department_url = reverse('department-detail', args=[employee_a.department.id])
-        data = {'name': employee_b.name, 'email': employee_b.email, 'department': department_url}
+        department_url = reverse(
+            'department-detail',
+            args=[employee_a.department.id]
+        )
+        data = {
+            'name': employee_b.name,
+            'email': employee_b.email,
+            'department': department_url
+        }
 
         view = EmployeeViewSet.as_view({'patch': 'partial_update'})
         url = reverse('employee-list', args=[employee_a.id])

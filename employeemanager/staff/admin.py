@@ -1,14 +1,19 @@
 from django.contrib import admin
+
 from staff.models import Department, Employee
 
+
 class DepartmentAdmin(admin.ModelAdmin):
+
     # fields to be displayed on search box
     search_fields = ('name',)
 
     # columns to be displayed on listing view
     list_display = ('name', 'created_at', 'updated_at')
 
+
 class EmployeeAdmin(admin.ModelAdmin):
+
     # fields to be displayed on search box
     search_fields = ('name', 'email')
 

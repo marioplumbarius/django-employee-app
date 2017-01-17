@@ -1,11 +1,11 @@
 from django.test import TestCase
 from django.db import IntegrityError
 from django.core.exceptions import ValidationError
+from factory.fuzzy import FuzzyText, FuzzyInteger
 
 from staff.models import Department, AbstractBaseModel
 from staff.tests.factories.department import DepartmentFactory
 
-from factory.fuzzy import FuzzyText, FuzzyInteger
 
 class DepartmentSpec(TestCase):
 

@@ -1,5 +1,6 @@
-from staff.models import Department, Employee
 from rest_framework import viewsets
+
+from staff.models import Department, Employee
 from staff.serializers import DepartmentSerializer, EmployeeSerializer
 
 
@@ -10,6 +11,7 @@ class DepartmentViewSet(viewsets.ModelViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     filter_fields = ('name',)
+
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     """

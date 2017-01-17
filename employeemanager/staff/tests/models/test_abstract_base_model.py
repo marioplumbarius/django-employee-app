@@ -1,4 +1,5 @@
 from unittest import mock
+
 from django.test import TestCase
 from django.utils import timezone
 from factory.fuzzy import FuzzyText
@@ -7,6 +8,7 @@ from staff.models import AbstractBaseModel, Department
 from staff.tests.factories.department import DepartmentFactory
 
 FROZEN_DATETIME_NOW = timezone.now()
+
 
 class AbstractBaseModelSpec(TestCase):
 
@@ -43,7 +45,7 @@ class AbstractBaseModelSpec(TestCase):
         department.save()
 
         self.assertEqual(first_created_at, department.created_at)
-        self.assertIsNotNone(department.created_at) # just a double-check
+        self.assertIsNotNone(department.created_at)  # just a double-check
 
     def test_updated_at_is_automatically_generated(self):
         """
@@ -75,4 +77,4 @@ class AbstractBaseModelSpec(TestCase):
         department.save()
 
         self.assertNotEqual(first_updated_at, department.updated_at)
-        self.assertIsNotNone(department.updated_at) # just a double-check
+        self.assertIsNotNone(department.updated_at)  # just a double-check

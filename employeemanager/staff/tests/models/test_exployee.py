@@ -3,12 +3,12 @@ import random
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+from factory.fuzzy import FuzzyText, FuzzyInteger
 
 from staff.models import Employee, AbstractBaseModel
 from staff.tests.factories.employee import EmployeeFactory
 from staff.tests.factories.department import DepartmentFactory
 
-from factory.fuzzy import FuzzyText, FuzzyInteger
 
 class EmployeeSpec(TestCase):
 
@@ -41,7 +41,6 @@ class EmployeeSpec(TestCase):
         employee.name = self.subject.name
 
         employee.full_clean()
-
 
     def test_name_cannot_be_blank(self):
         """

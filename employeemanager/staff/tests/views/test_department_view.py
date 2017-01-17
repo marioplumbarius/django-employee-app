@@ -1,17 +1,16 @@
 from django.urls import reverse
 from django.test import TestCase
-from rest_framework.test import APIRequestFactory
-from rest_framework.test import force_authenticate
-from rest_framework import status
 from factory.fuzzy import FuzzyInteger
-
+from rest_framework.test import APIRequestFactory, force_authenticate
+from rest_framework import status
 
 from staff.models import Department
 from staff.serializers import DepartmentSerializer
 from staff.tests.factories.department import DepartmentFactory
 from staff.tests.factories.user import UserFactory
-from staff.views import DepartmentViewSet
 from staff.tests.support.helpers.views import ViewsHelpers
+from staff.views import DepartmentViewSet
+
 
 class DepartmentViewSetSpec(TestCase):
 
@@ -51,7 +50,11 @@ class DepartmentViewSetSpec(TestCase):
         response.render()
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.data.get('name'), ['Ensure this field has no more than 250 characters.'])
+
+        self.assertEqual(
+            response.data.get('name'),
+            ['Ensure this field has no more than 250 characters.']
+        )
 
     def test_create_department_with_duplicated_name(self):
         department_a = DepartmentFactory.create()
@@ -67,7 +70,11 @@ class DepartmentViewSetSpec(TestCase):
         response.render()
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        self.assertEqual(response.data.get('name'), ['department with this name already exists.'])
+
+        self.assertEqual(
+            response.data.get('name'),
+            ['department with this name already exists.']
+        )
 
     def test_read_department_fetch_all(self):
         # TODO: assert pagination
