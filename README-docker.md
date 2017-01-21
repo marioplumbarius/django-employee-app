@@ -18,16 +18,6 @@ Employee Management application written in Pyhon (Django).
 - docker (v1.13.0)
 - docker-compose (v1.10.0-rc2)
 
-## Run migrations
-```bash
-docker-compose run web python3 employeemanager/manage.py migrate
-```
-
-## Create superuser
-```bash
-docker-compose run web python3 employeemanager/manage.py createsuperuser
-```
-
 ## Test
 ```bash
 docker-compose run web coverage run --source='.' employeemanager/manage.py test staff.tests
@@ -37,6 +27,16 @@ docker-compose run web coverage run --source='.' employeemanager/manage.py test 
 ```bash
 docker-compose run web coverage html
 # the report will be located at `htmlcov/index.html`
+```
+
+## Run migrations
+```bash
+docker-compose run web python3 employeemanager/manage.py migrate
+```
+
+## Create superuser
+```bash
+docker-compose run web python3 employeemanager/manage.py createsuperuser
 ```
 
 ## Start app
