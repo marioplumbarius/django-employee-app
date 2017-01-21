@@ -10,4 +10,4 @@ script:
 - python3 employeemanager/manage.py migrate
 - coverage run --source='.' employeemanager/manage.py test staff.tests
 after_sucess:
-- CODECLIMATE_REPO_TOKEN=2c0348135d02908c9166aacabe84cd0352c2b6686d92cf1f780e8f5beab6c74b codeclimate-test-reporter
+- coveralls
