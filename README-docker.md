@@ -15,61 +15,27 @@ Employee Management application written in Pyhon (Django).
 ---
 
 **Pre-requisites:**
-- docker (v1.12.6)
-- docker-compose (v1.10)
-
-## Load environment variables
-**IMPORTANT:** this must be done before any subsequent step.
-```shell
-source .dockerenv
-```
-
-## Build the Docker image
-```shell
-docker build -t $DOCKER_IMAGE .
-```
+- docker (v1.13.0)
+- docker-compose (v1.10.0-rc2)
 
 ## Run migrations
-```shell
-touch employeemanager/db.sqlite3
-docker run \
-    --rm \
-    --name employeemanager_migrations \
-    -v $HOST_DIR:/opt/app \
-    $DOCKER_IMAGE \
-    python3 employeemanager/manage.py migrate
+```bash
+docker-compose run web python3 employeemanager/manage.py migrate
 ```
 
-## Create superuser with privileged access
-```shell
-docker run \
-    --rm \
-    -ti \
-    --name employeemanager_createsuperuser \
-    -v $HOST_DIR:/opt/app \
-    $DOCKER_IMAGE \
-    python3 employeemanager/manage.py createsuperuser
+## Create superuser
+```bash
+docker-compose run web python3 employeemanager/manage.py createsuperuser
 ```
 
 ## Test
-```shell
-docker run \
-    --rm \
-    --name employeemanager_test \
-    -v $HOST_DIR:/opt/app \
-    $DOCKER_IMAGE \
-    coverage run --source='.' employeemanager/manage.py test staff.tests
+```bash
+docker-compose run web coverage run --source='.' employeemanager/manage.py test staff.tests
 ```
 
 ## Code coverage report
-*Note: Run this command only after running the test suite with the command above.*
-```shell
-docker run \
-    --rm \
-    --name employeemanager_test \
-    -v $HOST_DIR:/opt/app \
-    $DOCKER_IMAGE \
-    coverage html
+```bash
+docker-compose run web coverage html
 # the report will be located at `htmlcov/index.html`
 ```
 

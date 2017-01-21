@@ -1,6 +1,8 @@
 version: '2'
 services:
     web:
+        env_file:
+        - .dockerenv
         build: .
         command: python3 employeemanager/manage.py runserver 0.0.0.0:8000
         volumes:

@@ -1,6 +1,4 @@
-#!/bin/bash
-
-export HOST_DIR=$(pwd)
-export DOCKER_IMAGE=employeemanager
-
-
+APP_NAME=employeemanager
+DOCKER_TAG=0.0.1
+DOCKER_IMAGE=$APP_NAME:$DOCKER_TAG
+NODE_ENV=docker
