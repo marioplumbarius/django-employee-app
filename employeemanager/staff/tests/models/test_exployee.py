@@ -78,7 +78,9 @@ class EmployeeSpec(TestCase):
         email field must be unique
         """
 
-        expected_exception_msg = 'UNIQUE constraint failed: staff_employee.email'
+        exception_a = 'UNIQUE constraint failed: staff_employee.email'
+        exception_b = 'column email is not unique'
+        expected_exception_msg = '({0}|{1})'.format(exception_a, exception_b)
 
         with self.assertRaisesRegexp(IntegrityError, expected_exception_msg):
             EmployeeFactory.create(email=self.subject.email).full_clean()

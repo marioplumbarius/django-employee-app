@@ -35,7 +35,9 @@ class DepartmentSpec(TestCase):
         """
 
         name = self.subject.name
-        expected_exception_msg = 'UNIQUE constraint failed: staff_department.name'
+        exception_a = 'UNIQUE constraint failed: staff_department.name'
+        exception_b = 'column name is not unique'
+        expected_exception_msg = '({0}|{1})'.format(exception_a, exception_b)
 
         with self.assertRaisesRegexp(IntegrityError, expected_exception_msg):
             DepartmentFactory.create(name=name)
