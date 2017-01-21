@@ -90,3 +90,4 @@ ENV/
 .vscode
 .virtualenvs
 */db.sqlite3
+db
