@@ -6,8 +6,7 @@ before_install:
 install:
 - pip install -r requirements.txt
 - pip install -r requirements-test.txt
-- pip install coveralls
 script:
 - coverage run --source='.' employeemanager/manage.py test staff.tests
-after_sucess:
-- coveralls
+after_success:
+- bash <(curl -s https://codecov.io/bash)

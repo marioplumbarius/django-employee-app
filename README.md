@@ -9,7 +9,7 @@ Employee Management application written in Pyhon (Django).
 
 [![Build Status](https://travis-ci.org/marioluan/django-employee-app.svg?branch=master)](https://travis-ci.org/marioluan/django-employee-app)
 [![codebeat badge](https://codebeat.co/badges/09d03419-d881-4ffb-a719-17566c9e9d1a)](https://codebeat.co/projects/github-com-marioluan-django-employee-app)
-[![Coverage Status](https://coveralls.io/repos/github/marioluan/django-employee-app/badge.svg?branch=master)](https://coveralls.io/github/marioluan/django-employee-app?branch=master)
+[![codecov](https://codecov.io/gh/marioluan/django-employee-app/branch/master/graph/badge.svg)](https://codecov.io/gh/marioluan/django-employee-app)
 [![Dependency Status](https://gemnasium.com/badges/github.com/marioluan/django-employee-app.svg)](https://gemnasium.com/github.com/marioluan/django-employee-app)
 
 ---
